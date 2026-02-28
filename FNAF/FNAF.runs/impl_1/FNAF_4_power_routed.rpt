@@ -1,0 +1,191 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date             : Tue Dec 23 11:56:52 2025
+| Host             : LAPTOP-V1GJ1MRS running 64-bit major release  (build 9200)
+| Command          : report_power -file FNAF_4_power_routed.rpt -pb FNAF_4_power_summary_routed.pb -rpx FNAF_4_power_routed.rpx
+| Design           : FNAF_4
+| Device           : xc7a35tcpg236-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 57.948 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 57.447                           |
+| Device Static (W)        | 0.501                            |
+| Effective TJA (C/W)      | 5.0                              |
+| Max Ambient (C)          | 0.0                              |
+| Junction Temperature (C) | 125.0                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Slice Logic    |     2.826 |     3208 |       --- |             --- |
+|   LUT as Logic |     2.439 |     1566 |     20800 |            7.53 |
+|   CARRY4       |     0.223 |      122 |      8150 |            1.50 |
+|   Register     |     0.133 |     1114 |     41600 |            2.68 |
+|   BUFG         |     0.029 |        2 |        32 |            6.25 |
+|   F7/F8 Muxes  |     0.002 |      111 |     32600 |            0.34 |
+|   Others       |     0.000 |      125 |       --- |             --- |
+| Signals        |     4.109 |     2222 |       --- |             --- |
+| Block RAM      |     7.321 |     22.5 |        50 |           45.00 |
+| I/O            |    43.192 |       65 |       106 |           61.32 |
+| Static Power   |     0.501 |          |           |                 |
+| Total          |    57.948 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |    14.036 |      13.687 |      0.349 |
+| Vccaux    |       1.800 |     1.634 |       1.580 |      0.053 |
+| Vcco33    |       3.300 |    12.207 |      12.206 |      0.001 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.653 |       0.636 |      0.017 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 5.0                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++----------------------------------------+-----------+
+| Name                                   | Power (W) |
++----------------------------------------+-----------+
+| FNAF_4                                 |    57.447 |
+|   audio_control_0_inst                 |     0.392 |
+|     note_gen_0_inst                    |     0.252 |
+|     speaker_control_0_ints             |     0.140 |
+|   bonnie_0_inst                        |     0.133 |
+|     clock_divider_0_inst               |     0.103 |
+|   chika_0_inst                         |     0.120 |
+|     clock_divider_0_inst               |     0.080 |
+|   choose_nights_0_inst                 |     0.278 |
+|   clock_divider_0_inst                 |     0.035 |
+|   game_map_0_inst                      |     6.084 |
+|     blk_mem_gen_0_inst                 |     1.012 |
+|       U0                               |     1.012 |
+|     blk_mem_gen_1_inst                 |     0.826 |
+|       U0                               |     0.826 |
+|     blk_mem_gen_2_inst                 |     0.823 |
+|       U0                               |     0.823 |
+|     blk_mem_gen_3_inst                 |     0.750 |
+|       U0                               |     0.750 |
+|     blk_mem_gen_4_inst                 |     0.928 |
+|       U0                               |     0.928 |
+|     blk_mem_gen_5_inst                 |     0.894 |
+|       U0                               |     0.894 |
+|     clock_divider_0_inst               |     0.062 |
+|   gameplay_countdown_0_inst            |     0.669 |
+|     clock_divider_0_inst               |     0.078 |
+|   jumpscare_control_0_inst             |     0.120 |
+|     clock_divider_0_inst               |     0.095 |
+|   keyboard_control_0_inst              |     0.435 |
+|     key_decoder                        |     0.371 |
+|       inst                             |     0.370 |
+|   led_control_0_inst                   |     0.081 |
+|     clock_divider_0_inst               |     0.062 |
+|   main_states_0_inst                   |     0.785 |
+|   player_positions_0_inst              |     0.110 |
+|   screen_controller_0_inst             |     3.119 |
+|     blk_mem_gen_6_inst                 |     1.088 |
+|       U0                               |     1.088 |
+|     blk_mem_gen_7_inst                 |     1.032 |
+|       U0                               |     1.032 |
+|     blk_mem_gen_8_inst                 |     0.999 |
+|       U0                               |     0.999 |
+|   seven_segment_display_control_0_inst |     1.228 |
+|     SevenSegment_0_inst                |     1.059 |
+|     clock_divider_0_inst               |     0.068 |
+|   vga_controller_0_int                 |     0.120 |
++----------------------------------------+-----------+
+
+
